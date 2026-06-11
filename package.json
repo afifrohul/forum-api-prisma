@@ -1,0 +1,28 @@
+{
+  "name": "forum-api-prisma",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "nodemon ./src/server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "globals": "^17.4.0",
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "joi": "^18.1.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "nanoid": "^5.1.6",
+    "redis": "^5.11.0"
+  }
+}
