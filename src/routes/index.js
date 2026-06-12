@@ -1,5 +1,7 @@
 import { Router } from "express";
 
+import users from "../services/users/routes/index.js";
+
 const router = Router();
 
 router.get("/", (req, res) => {
@@ -8,5 +10,7 @@ router.get("/", (req, res) => {
     message: "Backend server successfully running!",
   });
 });
+
+router.use("/", users);
 
 export default router;
