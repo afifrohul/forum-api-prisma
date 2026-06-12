@@ -30,7 +30,7 @@ export const login = async (req, res, next) => {
   const accessToken = TokenManager.generateAccessToken({ id: userId });
 
   return response(res, 200, "Authentication berhasil ditambahkan", {
-    accessToken,
+    token: accessToken,
   });
 };
 
