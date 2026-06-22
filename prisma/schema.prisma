@@ -22,6 +22,7 @@ model User {
   updatedAt DateTime @updatedAt
 
   threads   Threads[]
+  comments  Comments[]
 }
 
 model Threads {
@@ -33,4 +34,19 @@ model Threads {
 
   userId    String
   user      User @relation(fields: [userId], references: [id])
+
+  comments  Comments[]
+}
+
+model Comments {
+  id        String @id @default(uuid())
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId    String
+  user      User @relation(fields: [userId], references: [id])
+
+  threadId  String
+  thread    Threads @relation(fields: [threadId], references: [id])
 }
