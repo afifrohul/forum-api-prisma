@@ -13,40 +13,71 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  name      String
-  email     String   @unique
-  password  String
-  avatar    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String   @id @default(uuid())
+  name        String
+  email       String   @unique
+  password    String
+  avatar      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
-  threads   Threads[]
-  comments  Comments[]
+  threads       Threads[]
+  threadVotes   ThreadVotes[]
+  comments      Comments[]
+  commentVotes  CommentVotes[]
 }
 
 model Threads {
-  id        String @id @default(uuid())
-  title     String
-  body      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String @id @default(uuid())
+  title       String
+  body        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
-  userId    String
-  user      User @relation(fields: [userId], references: [id])
+  userId      String
+  user        User @relation(fields: [userId], references: [id])
 
-  comments  Comments[]
+  comments    Comments[]
+  threadVotes ThreadVotes[]
 }
 
 model Comments {
-  id        String @id @default(uuid())
-  content   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            String @id @default(uuid())
+  content       String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
-  userId    String
-  user      User @relation(fields: [userId], references: [id])
+  userId        String
+  user          User @relation(fields: [userId], references: [id])
 
-  threadId  String
-  thread    Threads @relation(fields: [threadId], references: [id])
+  threadId      String
+  thread        Threads @relation(fields: [threadId], references: [id])
+
+  commentVotes  CommentVotes[]
+}
+
+model ThreadVotes {
+  id          String @id @default(uuid())
+  voteType    Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  userId      String
+  user        User @relation(fields: [userId], references: [id])
+
+  threadId    String
+  thread      Threads @relation(fields: [threadId], references: [id])
+}
+
+model CommentVotes {
+  id          String @id @default(uuid())
+  voteType    Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  userId      String
+  user        User @relation(fields: [userId], references: [id])
+
+  commentId   String
+  comment     Comments @relation(fields: [commentId], references: [id])
 }
