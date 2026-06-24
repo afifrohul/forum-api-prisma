@@ -113,8 +113,6 @@ router.post("/login", validate(loginPayloadSchema), login);
  *     description: Get list of users
  *     tags:
  *       - users
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: success
@@ -140,7 +138,7 @@ router.post("/login", validate(loginPayloadSchema), login);
  *                       avatar:
  *                         type: string
  */
-router.get("/users", authenticateToken, getAllUsers);
+router.get("/users", getAllUsers);
 
 /**
  * @swagger
