@@ -4,6 +4,7 @@ import { Router } from "express";
 
 import users from "../services/users/routes/index.js";
 import threads from "../services/threads/routes/index.js";
+import comments from "../services/comments/routes/index.js";
 
 const host = process.env.HOST;
 const port = process.env.PORT;
@@ -28,5 +29,6 @@ router.get("/v1", (req, res) => {
 
 router.use("/v1/", users);
 router.use("/v1/", threads);
+router.use("/v1/", comments);
 
 export default router;
