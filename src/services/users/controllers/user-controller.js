@@ -13,10 +13,10 @@ export const register = async (req, res, next) => {
   });
 
   if (!user) {
-    return next(new InvariantError("User gagal ditambahkan"));
+    return next(new InvariantError("Failed to create user"));
   }
 
-  return response(res, 201, "User berhasil ditambahkan", { user });
+  return response(res, 201, "User created", { user });
 };
 
 export const login = async (req, res, next) => {
@@ -24,12 +24,14 @@ export const login = async (req, res, next) => {
   const userId = await UserRepositories.verifyUserCredential(email, password);
 
   if (!userId) {
-    return next(new AuthenticationError("Kredensial yang Anda berikan salah"));
+    return next(
+      new AuthenticationError("The credentials you provided are incorrect"),
+    );
   }
 
   const accessToken = TokenManager.generateAccessToken({ id: userId });
 
-  return response(res, 200, "Authentication berhasil ditambahkan", {
+  return response(res, 200, "ok", {
     token: accessToken,
   });
 };
@@ -37,12 +39,12 @@ export const login = async (req, res, next) => {
 export const getAllUsers = async (req, res, next) => {
   const users = await UserRepositories.getAllUsers();
 
-  return response(res, 200, "User berhasil ditampilkan", { users });
+  return response(res, 200, "ok", { users });
 };
 
 export const getOwnProfile = async (req, res, next) => {
   const { id } = req.user;
   const user = await UserRepositories.getOwnProfile(id);
 
-  return response(res, 200, "User berhasil ditampilkan", { user });
+  return response(res, 200, "ok", { user });
 };

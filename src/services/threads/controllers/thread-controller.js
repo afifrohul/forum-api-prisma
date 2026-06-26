@@ -14,16 +14,16 @@ export const createThread = async (req, res, next) => {
   });
 
   if (!thread) {
-    return next(new InvariantError("Thread gagal ditambahkan"));
+    return next(new InvariantError("Failed to create thread"));
   }
 
-  return response(res, 201, "Thread berhasil ditambahkan", { thread });
+  return response(res, 201, "Thread created", { thread });
 };
 
 export const getAllThreads = async (req, res, next) => {
   const threads = await ThreadRepositories.getAllThreads();
 
-  return response(res, 200, "Thread berhasil ditampilkan", { threads });
+  return response(res, 200, "ok", { threads });
 };
 
 export const getDetailThread = async (req, res, next) => {
@@ -34,7 +34,7 @@ export const getDetailThread = async (req, res, next) => {
     const { user: owner, ...threadDetail } = thread;
     const responseData = { ...threadDetail, owner };
 
-    return response(res, 200, "Thread berhasil ditampilkan", {
+    return response(res, 200, "ok", {
       detailThread: responseData,
     });
   }

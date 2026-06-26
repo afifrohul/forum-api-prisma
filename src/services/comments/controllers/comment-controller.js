@@ -14,13 +14,13 @@ export const createComment = async (req, res, next) => {
   });
 
   if (!comment) {
-    return next(new InvariantError("Comment gagal ditambahkan"));
+    return next(new InvariantError("Failed to create comment"));
   }
 
   if (comment) {
     const { user: owner, ...commentDetail } = comment;
     const responseData = { ...commentDetail, owner };
 
-    return response(res, 201, "Comment berhasil ditambahkan", { comment: responseData });
+    return response(res, 201, "Comment created", { comment: responseData });
   }
 };

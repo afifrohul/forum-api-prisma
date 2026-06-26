@@ -28,14 +28,12 @@ class UserRepositories {
   }
 
   async verifyUserCredential(email, password) {
-    const query = {
-      text: "SELECT id, password FROM users WHERE email = $1",
-      values: [email],
-    };
-
     const user = await this.prisma.user.findUnique({
       where: {
         email,
+      },
+      omit: {
+        password: false,
       },
     });
 
