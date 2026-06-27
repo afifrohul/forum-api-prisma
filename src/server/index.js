@@ -11,7 +11,7 @@ const swaggerOptions = {
     info: {
       title: "Forum API Prisma Documentation",
       version: "1.0.0",
-      description: "Dokumentasi API pakai Swagger + Express + Prisma ORM",
+      description: "API Documentation with Swagger + Express + Prisma ORM",
     },
     components: {
       securitySchemes: {
