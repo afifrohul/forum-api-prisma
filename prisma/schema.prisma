@@ -26,6 +26,7 @@ model User {
   threadVotes   ThreadVotes[]
   comments      Comments[]
   commentVotes  CommentVotes[]
+  leaderboards  Leaderboards[]
 }
 
 model Threads {
@@ -89,4 +90,12 @@ model CommentVotes {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
+}
+
+model Leaderboards {
+  id      String @id @default(uuid())
+  score   Int
+
+  userId  String
+  user    User @relation(fields: [userId], references: [id])
 }
