@@ -78,6 +78,9 @@ CREATE UNIQUE INDEX "ThreadVotes_threadId_userId_key" ON "ThreadVotes"("threadId
 -- CreateIndex
 CREATE UNIQUE INDEX "CommentVotes_commentId_userId_key" ON "CommentVotes"("commentId", "userId");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "Leaderboards_userId_key" ON "Leaderboards"("userId");
+
 -- AddForeignKey
 ALTER TABLE "Threads" ADD CONSTRAINT "Threads_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 

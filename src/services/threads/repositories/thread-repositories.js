@@ -15,6 +15,15 @@ class ThreadRepositories {
       },
     });
 
+    const leaderboardUser = await this.prisma.leaderboards.findFirst({
+      where: { userId },
+    });
+
+    await this.prisma.leaderboards.update({
+      where: { userId },
+      data: { score: Number(leaderboardUser.score + 1) },
+    });
+
     return thread;
   }
 

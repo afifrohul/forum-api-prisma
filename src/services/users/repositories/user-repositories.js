@@ -19,6 +19,13 @@ class UserRepositories {
       },
     });
 
+    await this.prisma.leaderboards.create({
+      data: {
+        score: 0,
+        userId: user.id,
+      },
+    });
+
     return {
       id: user.id,
       name: user.name,

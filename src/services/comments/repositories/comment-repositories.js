@@ -14,6 +14,15 @@ class CommentRepositories {
       },
     });
 
+    const leaderboardUser = await this.prisma.leaderboards.findFirst({
+      where: { userId },
+    });
+
+    await this.prisma.leaderboards.update({
+      where: { userId },
+      data: { score: Number(leaderboardUser.score + 1) },
+    });
+
     const commentDetail = await this.prisma.comments.findUnique({
       where: { id: comment.id },
       include: { user: true },
