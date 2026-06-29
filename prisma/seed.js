@@ -3,6 +3,7 @@ import { Pool } from "pg";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../generated/prisma/client.ts";
 import { fakerID_ID as faker } from "@faker-js/faker";
+import bcrypt from "bcrypt";
 
 const connectionString = `${process.env.DATABASE_URL}`;
 const pool = new Pool({ connectionString });
@@ -10,13 +11,14 @@ const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
+  const hashedPassword = await bcrypt.hash("password", 10);
   const afif = await prisma.user.upsert({
     where: { email: "afifmemyself22@gmail.com" },
     update: {},
     create: {
       email: "afifmemyself22@gmail.com",
       name: "Afif Rohul",
-      password: "password",
+      password: hashedPassword,
       avatar: "https://ui-avatars.com/api/?name=Afif%20Rohul&background=random",
     },
   });
@@ -34,7 +36,7 @@ async function main() {
       data: {
         name,
         email: faker.internet.email(),
-        password: "password",
+        password: hashedPassword,
         avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(
           name,
         )}&background=random`,

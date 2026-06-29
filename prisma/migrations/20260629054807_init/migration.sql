@@ -72,6 +72,12 @@ CREATE TABLE "Leaderboards" (
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "ThreadVotes_threadId_userId_key" ON "ThreadVotes"("threadId", "userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "CommentVotes_commentId_userId_key" ON "CommentVotes"("commentId", "userId");
+
 -- AddForeignKey
 ALTER TABLE "Threads" ADD CONSTRAINT "Threads_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 

@@ -75,6 +75,7 @@ model ThreadVotes {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
+  @@unique([threadId, userId])
 }
 
 model CommentVotes {
@@ -90,6 +91,7 @@ model CommentVotes {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
+  @@unique([commentId, userId])
 }
 
 model Leaderboards {
