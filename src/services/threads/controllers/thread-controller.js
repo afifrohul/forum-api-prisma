@@ -31,8 +31,41 @@ export const getDetailThread = async (req, res, next) => {
   const thread = await ThreadRepositories.getDetailThread(id);
 
   if (thread) {
-    const { user: owner, ...threadDetail } = thread;
-    const responseData = { ...threadDetail, owner };
+    const {
+      user: ownerThread,
+      threadVotes,
+      comments,
+      ...threadDetail
+    } = thread;
+
+    const threadUpVotesBy = threadVotes
+      .filter((vote) => vote.voteType === 1)
+      .map((vote) => vote.userId);
+
+    const threadDownVotesBy = threadVotes
+      .filter((vote) => vote.voteType === -1)
+      .map((vote) => vote.userId);
+
+    const newComments = comments.map(({ user, commentVotes, ...rest }) => {
+      return {
+        ...rest,
+        owner: user,
+        upVotesBy: commentVotes
+          .filter((vote) => vote.voteType === 1)
+          .map((vote) => vote.userId),
+        downVotesBy: commentVotes
+          .filter((vote) => vote.voteType === -1)
+          .map((vote) => vote.userId),
+      };
+    });
+
+    const responseData = {
+      ...threadDetail,
+      upVotesBy: threadUpVotesBy,
+      downVotesBy: threadDownVotesBy,
+      owner: ownerThread,
+      comments: newComments,
+    };
 
     return response(res, 200, "ok", {
       detailThread: responseData,

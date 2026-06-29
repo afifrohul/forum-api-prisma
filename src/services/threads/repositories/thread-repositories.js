@@ -36,7 +36,16 @@ class ThreadRepositories {
   async getDetailThread(id) {
     const thread = await this.prisma.threads.findUnique({
       where: { id },
-      include: { user: true },
+      include: {
+        user: true,
+        threadVotes: true,
+        comments: {
+          include: {
+            user: true,
+            commentVotes: true,
+          },
+        },
+      },
     });
 
     return thread;
