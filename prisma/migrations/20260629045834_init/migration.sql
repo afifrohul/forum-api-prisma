@@ -60,6 +60,15 @@ CREATE TABLE "CommentVotes" (
     CONSTRAINT "CommentVotes_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "Leaderboards" (
+    "id" TEXT NOT NULL,
+    "score" INTEGER NOT NULL,
+    "userId" TEXT NOT NULL,
+
+    CONSTRAINT "Leaderboards_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
@@ -83,3 +92,6 @@ ALTER TABLE "CommentVotes" ADD CONSTRAINT "CommentVotes_userId_fkey" FOREIGN KEY
 
 -- AddForeignKey
 ALTER TABLE "CommentVotes" ADD CONSTRAINT "CommentVotes_commentId_fkey" FOREIGN KEY ("commentId") REFERENCES "Comments"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Leaderboards" ADD CONSTRAINT "Leaderboards_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
