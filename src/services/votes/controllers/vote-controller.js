@@ -15,7 +15,7 @@ export const upVoteThread = async (req, res, next) => {
     return next(new InvariantError("Failed to up vote thread"));
   }
 
-  return response(res, 201, "Thread Upvoted", { vote });
+  return response(res, 201, "Thread upvoted", { vote });
 };
 
 export const downVoteThread = async (req, res, next) => {
@@ -48,4 +48,52 @@ export const neutralVoteThread = async (req, res, next) => {
   }
 
   return response(res, 201, "Thread vote neutralized", { vote });
+};
+
+export const upVoteComment = async (req, res, next) => {
+  const userId = req.user.id;
+  const commentId = req.params.commentId;
+
+  const vote = await VoteRepositories.upVoteComment({
+    commentId,
+    userId,
+  });
+
+  if (!vote) {
+    return next(new InvariantError("Failed to up vote comment"));
+  }
+
+  return response(res, 201, "Comment upvoted", { vote });
+};
+
+export const downVoteComment = async (req, res, next) => {
+  const userId = req.user.id;
+  const commentId = req.params.commentId;
+
+  const vote = await VoteRepositories.downVoteComment({
+    commentId,
+    userId,
+  });
+
+  if (!vote) {
+    return next(new InvariantError("Failed to down vote comment"));
+  }
+
+  return response(res, 201, "Comment downvoted", { vote });
+};
+
+export const neutralVoteComment = async (req, res, next) => {
+  const userId = req.user.id;
+  const commentId = req.params.commentId;
+
+  const vote = await VoteRepositories.neutralVoteComment({
+    commentId,
+    userId,
+  });
+
+  if (!vote) {
+    return next(new InvariantError("Failed to neutral vote comment"));
+  }
+
+  return response(res, 201, "Comment vote neutralized", { vote });
 };

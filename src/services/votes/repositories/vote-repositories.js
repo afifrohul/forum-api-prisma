@@ -61,6 +61,63 @@ class VoteRepositories {
 
     return neutralVote;
   }
+
+  async upVoteComment({ commentId, userId }) {
+    const upVote = await this.prisma.commentVotes.upsert({
+      where: {
+        commentId_userId: {
+          commentId,
+          userId,
+        },
+      },
+      update: { voteType: 1 },
+      create: {
+        commentId,
+        userId,
+        voteType: 1,
+      },
+    });
+
+    return upVote;
+  }
+
+  async downVoteComment({ commentId, userId }) {
+    const upVote = await this.prisma.commentVotes.upsert({
+      where: {
+        commentId_userId: {
+          commentId,
+          userId,
+        },
+      },
+      update: { voteType: -1 },
+      create: {
+        commentId,
+        userId,
+        voteType: -1,
+      },
+    });
+
+    return upVote;
+  }
+
+  async neutralVoteComment({ commentId, userId }) {
+    const upVote = await this.prisma.commentVotes.upsert({
+      where: {
+        commentId_userId: {
+          commentId,
+          userId,
+        },
+      },
+      update: { voteType: 0 },
+      create: {
+        commentId,
+        userId,
+        voteType: 0,
+      },
+    });
+
+    return upVote;
+  }
 }
 
 export default new VoteRepositories();
