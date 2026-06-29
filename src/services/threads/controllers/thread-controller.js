@@ -17,13 +17,43 @@ export const createThread = async (req, res, next) => {
     return next(new InvariantError("Failed to create thread"));
   }
 
-  return response(res, 201, "Thread created", { thread });
+  const { userId: ownerId, comments, user, threadVotes, ...rest } = thread;
+
+  const responseData = {
+    ...rest,
+    ownerId,
+    upVotesBy: threadVotes
+      .filter((vote) => vote.voteType === 1)
+      .map((vote) => vote.userId),
+    downVotesBy: threadVotes
+      .filter((vote) => vote.voteType === -1)
+      .map((vote) => vote.userId),
+    totalComments: comments.length,
+  };
+
+  return response(res, 201, "Thread created", { thread: responseData });
 };
 
 export const getAllThreads = async (req, res, next) => {
   const threads = await ThreadRepositories.getAllThreads();
 
-  return response(res, 200, "ok", { threads });
+  const newThreads = threads.map(
+    ({ userId: ownerId, comments, threadVotes, ...rest }) => {
+      return {
+        ...rest,
+        ownerId,
+        upVotesBy: threadVotes
+          .filter((vote) => vote.voteType === 1)
+          .map((vote) => vote.userId),
+        downVotesBy: threadVotes
+          .filter((vote) => vote.voteType === -1)
+          .map((vote) => vote.userId),
+        totalComments: comments.length,
+      };
+    },
+  );
+
+  return response(res, 200, "ok", { threads: newThreads });
 };
 
 export const getDetailThread = async (req, res, next) => {

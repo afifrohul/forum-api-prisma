@@ -18,8 +18,17 @@ export const createComment = async (req, res, next) => {
   }
 
   if (comment) {
-    const { user: owner, ...commentDetail } = comment;
-    const responseData = { ...commentDetail, owner };
+    const { user: owner, commentVotes, ...commentDetail } = comment;
+    const responseData = {
+      ...commentDetail,
+      upVotesBy: commentVotes
+        .filter((vote) => vote.voteType === 1)
+        .map((vote) => vote.userId),
+      downVotesBy: commentVotes
+        .filter((vote) => vote.voteType === -1)
+        .map((vote) => vote.userId),
+      owner,
+    };
 
     return response(res, 201, "Comment created", { comment: responseData });
   }

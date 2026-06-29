@@ -24,11 +24,18 @@ class ThreadRepositories {
       data: { score: Number(leaderboardUser.score + 1) },
     });
 
-    return thread;
+    const detailThread = await this.getDetailThread(thread.id);
+
+    return detailThread;
   }
 
   async getAllThreads() {
-    const threads = await this.prisma.threads.findMany();
+    const threads = await this.prisma.threads.findMany({
+      include: {
+        comments: true,
+        threadVotes: true,
+      },
+    });
 
     return threads;
   }

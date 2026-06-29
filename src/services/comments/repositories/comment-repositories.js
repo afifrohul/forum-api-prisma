@@ -25,7 +25,7 @@ class CommentRepositories {
 
     const commentDetail = await this.prisma.comments.findUnique({
       where: { id: comment.id },
-      include: { user: true },
+      include: { user: true, commentVotes: true },
     });
 
     return commentDetail;
