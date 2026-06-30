@@ -5,6 +5,9 @@ import ErrorHandler from "../middlewares/error.js";
 import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 
+const port = process.env.PORT;
+const host = process.env.HOST;
+
 const swaggerOptions = {
   definition: {
     openapi: "3.0.0",
@@ -22,7 +25,7 @@ const swaggerOptions = {
         },
       },
     },
-    servers: [{ url: "http://localhost:3000/v1" }],
+    servers: [{ url: `${host}:${port}/v1` }],
   },
   apis: ["./src/services/users/routes/index.js"],
 };
