@@ -35,6 +35,9 @@ class ThreadRepositories {
         comments: true,
         threadVotes: true,
       },
+      orderBy: {
+        createdAt: 'desc'
+      }
     });
 
     return threads;
