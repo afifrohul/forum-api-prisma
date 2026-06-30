@@ -39,7 +39,9 @@ app.use(
   "/v1/api-docs",
   swaggerUi.serve,
   swaggerUi.setup(openapiSpecification, {
-    explorer: true,
+    swaggerOptions: {
+      url: "/v1/api-docs.json",
+    },
   }),
 );
 app.use(routes);
