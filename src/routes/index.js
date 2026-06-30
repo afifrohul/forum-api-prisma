@@ -16,7 +16,7 @@ const router = Router();
 router.get("/", (req, res) => {
   return res.json({
     baseUrl: {
-      v1: `${host}:${port}/v1`,
+      v1: `${req.protocol}://${req.get("host")}/v1`,
     },
   });
 });

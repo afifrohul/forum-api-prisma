@@ -7,6 +7,7 @@ import swaggerUi from "swagger-ui-express";
 
 const port = process.env.PORT;
 const host = process.env.HOST;
+const hostv1 = process.env.HOSTV1;
 
 const swaggerOptions = {
   definition: {
@@ -25,7 +26,7 @@ const swaggerOptions = {
         },
       },
     },
-    servers: [{ url: `${host}:${port}/v1` }],
+    servers: [{ url: `${host}:${port}/v1` }, { url: `${hostv1}` }],
   },
   apis: ["./src/services/users/routes/index.js"],
 };
