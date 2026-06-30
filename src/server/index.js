@@ -35,7 +35,13 @@ const openapiSpecification = swaggerJsDoc(swaggerOptions);
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/v1/api-docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification));
+app.use(
+  "/v1/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(openapiSpecification, {
+    explorer: true,
+  }),
+);
 app.use(routes);
 app.use(ErrorHandler);
 
