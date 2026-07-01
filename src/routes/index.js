@@ -15,6 +15,7 @@ const router = Router();
 
 router.get("/", (req, res) => {
   return res.json({
+    docs: `${req.protocol}://${req.get("host")}/api-docs`,
     baseUrl: {
       v1: `${req.protocol}://${req.get("host")}/v1`,
     },
