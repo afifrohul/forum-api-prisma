@@ -1,0 +1,1903 @@
+{
+  "info": {
+    "_postman_id": "90bcf95a-1fe0-4ae4-9dd3-a2c64d6f9bec",
+    "name": "Forum API Prisma",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31539875"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "Users",
+          "item": [
+            {
+              "name": "Register",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Afif Rohul 2\",\n    \"email\": \"afifrohul@gmail.com\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/register",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "register"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Register",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"Afif Rohul 2\",\n    \"email\": \"afifrohul@gmail.com\",\n    \"password\": \"password\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/register",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "register"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:22:17 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"f5-6mQ49PU/3QFcXKFbr7IHxPWhVgQ\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::zr2pr-1782872535521-edd91063d7ee"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "245"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"User created\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"name\": \"Afif Rohul 2\",\n            \"email\": \"afifrohul@gmail.com\",\n            \"avatar\": \"https://ui-avatars.com/api/?name=Afif Rohul 2&background=random\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Login",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "const responseJson = pm.response.json();",
+                      "pm.environment.set('token', responseJson.data.token);"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"afifrohul@gmail.com\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/login",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "login"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Login",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email\": \"afifrohul@gmail.com\",\n    \"password\": \"password\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/login",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:22:58 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"fd-IxO/7OgBQiTrtb6Pj1t1PRsoRaA\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::jjr7z-1782872577267-55d7344d9d6d"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "253"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiYjRlYWI1LTk4OGQtNGY0Yy05NjZiLWI1MzVmN2FjZDBjZCIsImlhdCI6MTc4Mjg3MjU3OCwiZXhwIjoxNzgyODgzMzc4fQ.05f-TAfJ2EtWR2upsBWfsi8r7__3hF0P0T7SDRBsWtc\"\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "See all users",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/users",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "users"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "See all users",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/users",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "users"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "age",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "br"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:23:13 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"97e-wAUbw1Jf7o52f4jg5p6c5z9wjRc\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::wt4x8-1782872592474-8e0ecfbfa2ee"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"data\": {\n        \"users\": [\n            {\n                \"id\": \"0088ad72-1d08-4dd8-a6fa-1df190cf2bcf\",\n                \"name\": \"Eka Saragih\",\n                \"email\": \"Titi.Saptono@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Eka%20Saragih&background=random\"\n            },\n            {\n                \"id\": \"095b9a61-094e-414d-8c14-0e2bdfbd134a\",\n                \"name\": \"Ajimat Ajimat Herlambang\",\n                \"email\": \"Cahyanto91@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Ajimat%20Ajimat%20Herlambang&background=random\"\n            },\n            {\n                \"id\": \"132c9942-f41c-4c23-82ed-fba5ba95b38e\",\n                \"name\": \"Sadina Pudjiastuti\",\n                \"email\": \"Jarwa50@yahoo.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Sadina%20Pudjiastuti&background=random\"\n            },\n            {\n                \"id\": \"4461eef4-39a4-4b8c-b214-e32ead796195\",\n                \"name\": \"Hariyah Raisa\",\n                \"email\": \"Queen.Safitri59@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Hariyah%20Raisa&background=random\"\n            },\n            {\n                \"id\": \"492df421-d9d9-415b-a66a-dc5a4005fd3d\",\n                \"name\": \"Afif Rohul\",\n                \"email\": \"afifmemyself22@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Afif%20Rohul&background=random\"\n            },\n            {\n                \"id\": \"512945c2-a63f-4bda-bb0e-035af2aa1ee5\",\n                \"name\": \"Kusuma Nadia\",\n                \"email\": \"Balamantri20@yahoo.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Kusuma%20Nadia&background=random\"\n            },\n            {\n                \"id\": \"8a4a8802-ea6c-458a-82f1-71aafd8f653e\",\n                \"name\": \"Yolanda Indah\",\n                \"email\": \"Zelda27@yahoo.co.id\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Yolanda%20Indah&background=random\"\n            },\n            {\n                \"id\": \"9b1e80bb-0f58-4792-b856-8b0cad27fb70\",\n                \"name\": \"Nugraha Jindra\",\n                \"email\": \"Kusuma.Purwadi@yahoo.co.id\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Nugraha%20Jindra&background=random\"\n            },\n            {\n                \"id\": \"af0a5e99-1c59-425e-aabb-1f42fa6c8e10\",\n                \"name\": \"Hamima Hamima Damayanti\",\n                \"email\": \"Anom30@yahoo.co.id\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Hamima%20Hamima%20Damayanti&background=random\"\n            },\n            {\n                \"id\": \"af96e20d-e041-45e2-b15f-d39eec5aef85\",\n                \"name\": \"Nuraini Tri\",\n                \"email\": \"Harsanto_Uwais@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Nuraini%20Tri&background=random\"\n            },\n            {\n                \"id\": \"b6f28e5a-4950-4157-b716-e4fc84fc4e17\",\n                \"name\": \"Mangunsong Ajimat\",\n                \"email\": \"Rafi.Darojat@yahoo.co.id\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Mangunsong%20Ajimat&background=random\"\n            },\n            {\n                \"id\": \"1aaa76e9-84f5-4936-9ebd-e2b43fd5d51b\",\n                \"name\": \"John Doe\",\n                \"email\": \"johndoe@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=John Doe&background=random\"\n            },\n            {\n                \"id\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n                \"name\": \"Afif Rohul 2\",\n                \"email\": \"afifrohul@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Afif Rohul 2&background=random\"\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "See own profile",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/users/me",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "users",
+                    "me"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "See own profile",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/users/me",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "users",
+                        "me"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:23:34 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"eb-dobTNg6mHxTtjlWuwVUGN4f7ha8\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "BYPASS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::wxlq6-1782872613826-458d8e4cd3fa"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "235"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"name\": \"Afif Rohul 2\",\n            \"email\": \"afifrohul@gmail.com\",\n            \"avatar\": \"https://ui-avatars.com/api/?name=Afif Rohul 2&background=random\"\n        }\n    }\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Threads",
+          "item": [
+            {
+              "name": "Create Thread",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "const responseJson = pm.response.json();",
+                      "pm.environment.set('threadId', responseJson.data.thread.id);"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\": \"Thread ketiga\",\n    \"body\": \"Ini adalah thread ketiga\",\n    \"category\": \"General\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Create Thread",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"Thread ketiga\",\n    \"body\": \"Ini adalah thread ketiga\",\n    \"category\": \"General\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:24:18 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"17a-xsjz/7ChvDJ8etMo7KsqL2uQqE4\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::lsg5p-1782872656391-929630062d70"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "378"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Thread created\",\n    \"data\": {\n        \"thread\": {\n            \"id\": \"64c3e3e3-b447-4f4f-a363-61943f9e8e34\",\n            \"title\": \"Thread ketiga\",\n            \"body\": \"Ini adalah thread ketiga\",\n            \"category\": \"General\",\n            \"createdAt\": \"2026-07-01T02:24:16.521Z\",\n            \"updatedAt\": \"2026-07-01T02:24:16.521Z\",\n            \"ownerId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"upVotesBy\": [],\n            \"downVotesBy\": [],\n            \"totalComments\": 0\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "See All Threads",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "See All Threads",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "br"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:24:30 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"8a9-2HYdq41Z5lYX/RXD//Bu9LwFxKM\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "BYPASS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::2h5tn-1782872669202-3b23388c1ebe"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"data\": {\n        \"threads\": [\n            {\n                \"id\": \"64c3e3e3-b447-4f4f-a363-61943f9e8e34\",\n                \"title\": \"Thread ketiga\",\n                \"body\": \"Ini adalah thread ketiga\",\n                \"category\": \"General\",\n                \"createdAt\": \"2026-07-01T02:24:16.521Z\",\n                \"updatedAt\": \"2026-07-01T02:24:16.521Z\",\n                \"ownerId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n                \"upVotesBy\": [],\n                \"downVotesBy\": [],\n                \"totalComments\": 0\n            },\n            {\n                \"id\": \"991db922-3243-46ac-b030-9fa48f31cf35\",\n                \"title\": \"Bagaimana pengalamanmu belajar Redux?\",\n                \"body\": \"Coba ceritakan dong, gimana pengalaman kalian belajar Redux di Dicoding?\",\n                \"category\": \"redux\",\n                \"createdAt\": \"2026-06-30T03:31:22.099Z\",\n                \"updatedAt\": \"2026-06-30T03:31:22.099Z\",\n                \"ownerId\": \"492df421-d9d9-415b-a66a-dc5a4005fd3d\",\n                \"upVotesBy\": [\n                    \"1aaa76e9-84f5-4936-9ebd-e2b43fd5d51b\"\n                ],\n                \"downVotesBy\": [],\n                \"totalComments\": 1\n            },\n            {\n                \"id\": \"8b74fdd0-842f-4af8-bd69-422be196dce9\",\n                \"title\": \"Halo! Selamat datang dan silakan perkenalkan diri kamu\",\n                \"body\": \"<div>Bagaimana kabarmu? Semoga baik-baik saja ya. Sekali lagi saya ucapkan selamat datang semuanya!</div><div><br></div><div>Seperti yang sudah disampaikan sebelumnya, pada diskusi ini kamu bisa memperkenalkan diri kamu dan juga berkenalan dengan teman sekelas lainnya.</div><div><br></div><div>Berhubungan baik dengan teman sekelas dan instruktur merupakan bagian penting dari pembelajaran di kelas ini, karena mereka dapat membantu jika kamu mengalami kendala dalam mempelajari dan memahami materi.&nbsp;&nbsp;</div><div><br></div><div>Oleh karena itu, luangkanlah waktumu untuk saling mengenal dan mencairkan suasana. Membangun interaksi dengan siswa lain akan membuat pengalaman belajar kamu jauh lebih menyenangkan dan menarik.&nbsp;</div><div><br></div><div>Beberapa hal yang dapat kamu tulis pada perkenalan diri:</div><div><br></div><div>- Siapa kamu dan dari mana kamu berasal?</div><div>- Apa pekerjaan atau pendidikan kamu saat ini?</div><div>- Kenapa kamu mengambil pelatihan ini? Apakah mungkin karena kamu sedang mengejar perubahan dalam karir, atau lainnya?</div>\",\n                \"category\": \"perkenalan\",\n                \"createdAt\": \"2026-06-30T03:30:36.178Z\",\n                \"updatedAt\": \"2026-06-30T03:30:36.178Z\",\n                \"ownerId\": \"492df421-d9d9-415b-a66a-dc5a4005fd3d\",\n                \"upVotesBy\": [\n                    \"1aaa76e9-84f5-4936-9ebd-e2b43fd5d51b\"\n                ],\n                \"downVotesBy\": [],\n                \"totalComments\": 2\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "See Detail Threads",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads/{{threadId}}",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads",
+                    "{{threadId}}"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "See Detail Threads",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads/{{threadId}}",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads",
+                        "{{threadId}}"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:24:40 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"272-aeNfxwpKtxVs2E3QDhAuuTfYHeE\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "BYPASS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::pd4km-1782872679601-e037c3ccac6c"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "626"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"data\": {\n        \"detailThread\": {\n            \"id\": \"64c3e3e3-b447-4f4f-a363-61943f9e8e34\",\n            \"title\": \"Thread ketiga\",\n            \"body\": \"Ini adalah thread ketiga\",\n            \"category\": \"General\",\n            \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"createdAt\": \"2026-07-01T02:24:16.521Z\",\n            \"updatedAt\": \"2026-07-01T02:24:16.521Z\",\n            \"upVotesBy\": [],\n            \"downVotesBy\": [],\n            \"owner\": {\n                \"id\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n                \"name\": \"Afif Rohul 2\",\n                \"email\": \"afifrohul@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Afif Rohul 2&background=random\",\n                \"createdAt\": \"2026-07-01T02:22:15.959Z\",\n                \"updatedAt\": \"2026-07-01T02:22:15.959Z\"\n            },\n            \"comments\": []\n        }\n    }\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Comments",
+          "item": [
+            {
+              "name": "Create Comment",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "const responseJson = pm.response.json();",
+                      "pm.environment.set('commentId', responseJson.data.comment.id);"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"content\": \"Ini adalah komen pertama\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/comments",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads",
+                    "{{threadId}}",
+                    "comments"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Create Comment",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"content\": \"Ini adalah komen pertama\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/comments",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads",
+                        "{{threadId}}",
+                        "comments"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:24:56 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"274-cmzWyRJ7cbGEO/JCmwppHMawFe4\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::zl86n-1782872694900-52afa9afe8e0"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "628"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Comment created\",\n    \"data\": {\n        \"comment\": {\n            \"id\": \"2bb0fbf7-6175-4573-9cef-ff19b217c195\",\n            \"content\": \"Ini adalah komen pertama\",\n            \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"threadId\": \"64c3e3e3-b447-4f4f-a363-61943f9e8e34\",\n            \"createdAt\": \"2026-07-01T02:24:55.040Z\",\n            \"updatedAt\": \"2026-07-01T02:24:55.040Z\",\n            \"upVotesBy\": [],\n            \"downVotesBy\": [],\n            \"owner\": {\n                \"id\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n                \"name\": \"Afif Rohul 2\",\n                \"email\": \"afifrohul@gmail.com\",\n                \"avatar\": \"https://ui-avatars.com/api/?name=Afif Rohul 2&background=random\",\n                \"createdAt\": \"2026-07-01T02:22:15.959Z\",\n                \"updatedAt\": \"2026-07-01T02:22:15.959Z\"\n            }\n        }\n    }\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Votes",
+          "item": [
+            {
+              "name": "Up-vote Thread",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/up-vote",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads",
+                    "{{threadId}}",
+                    "up-vote"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Up-vote Thread",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/up-vote",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads",
+                        "{{threadId}}",
+                        "up-vote"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:25:06 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"135-x9YPTtWiw4tFxEZ68pEycpJe9GU\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::k5z9v-1782872706384-d5166ac59ca2"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "309"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Thread upvoted\",\n    \"data\": {\n        \"vote\": {\n            \"id\": \"67102183-9448-4b21-8231-187ae2c2b5ba\",\n            \"voteType\": 1,\n            \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"threadId\": \"64c3e3e3-b447-4f4f-a363-61943f9e8e34\",\n            \"createdAt\": \"2026-07-01T02:25:06.527Z\",\n            \"updatedAt\": \"2026-07-01T02:25:06.527Z\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Down-vote Thread",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/down-vote",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads",
+                    "{{threadId}}",
+                    "down-vote"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Down-vote Thread",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/down-vote",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads",
+                        "{{threadId}}",
+                        "down-vote"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:25:18 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"138-Zul+FjVzL78JQxADVy2/S2fUREA\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::mldcn-1782872717789-ad06283cd75c"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "312"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Thread downvoted\",\n    \"data\": {\n        \"vote\": {\n            \"id\": \"67102183-9448-4b21-8231-187ae2c2b5ba\",\n            \"voteType\": -1,\n            \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"threadId\": \"64c3e3e3-b447-4f4f-a363-61943f9e8e34\",\n            \"createdAt\": \"2026-07-01T02:25:06.527Z\",\n            \"updatedAt\": \"2026-07-01T02:25:17.950Z\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Neutralize-vote Thread",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/neutral-vote",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads",
+                    "{{threadId}}",
+                    "neutral-vote"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Neutralize-vote Thread",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/neutral-vote",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads",
+                        "{{threadId}}",
+                        "neutral-vote"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:25:30 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"13e-PcqqBlrJJy3iTTwoUhxWyuejxY8\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::6rq2d-1782872729345-815ffc4d4ffb"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "318"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Thread vote neutralized\",\n    \"data\": {\n        \"vote\": {\n            \"id\": \"67102183-9448-4b21-8231-187ae2c2b5ba\",\n            \"voteType\": 0,\n            \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"threadId\": \"64c3e3e3-b447-4f4f-a363-61943f9e8e34\",\n            \"createdAt\": \"2026-07-01T02:25:06.527Z\",\n            \"updatedAt\": \"2026-07-01T02:25:29.540Z\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Up-vote Comment",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/comments/{{commentId}}/up-vote",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads",
+                    "{{threadId}}",
+                    "comments",
+                    "{{commentId}}",
+                    "up-vote"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Up-vote Comment",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/comments/{{commentId}}/up-vote",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads",
+                        "{{threadId}}",
+                        "comments",
+                        "{{commentId}}",
+                        "up-vote"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:25:39 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"137-k/eFxLiiejAZSjFj35U4RAdqYto\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::9jwj9-1782872739192-5213082bdafc"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "311"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Comment upvoted\",\n    \"data\": {\n        \"vote\": {\n            \"id\": \"156656b6-ce95-496a-8a3c-4ff4b59f5389\",\n            \"voteType\": 1,\n            \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"commentId\": \"2bb0fbf7-6175-4573-9cef-ff19b217c195\",\n            \"createdAt\": \"2026-07-01T02:25:39.678Z\",\n            \"updatedAt\": \"2026-07-01T02:25:39.678Z\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Down-vote Comment",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/comments/{{commentId}}/down-vote",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads",
+                    "{{threadId}}",
+                    "comments",
+                    "{{commentId}}",
+                    "down-vote"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Down-vote Comment",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/comments/{{commentId}}/down-vote",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads",
+                        "{{threadId}}",
+                        "comments",
+                        "{{commentId}}",
+                        "down-vote"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:25:50 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"13a-PZ0dsAq46S53wpnG7+Jswn1coq0\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::9tcgp-1782872749918-3763e6f9cc16"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "314"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Comment downvoted\",\n    \"data\": {\n        \"vote\": {\n            \"id\": \"156656b6-ce95-496a-8a3c-4ff4b59f5389\",\n            \"voteType\": -1,\n            \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"commentId\": \"2bb0fbf7-6175-4573-9cef-ff19b217c195\",\n            \"createdAt\": \"2026-07-01T02:25:39.678Z\",\n            \"updatedAt\": \"2026-07-01T02:25:50.049Z\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Neutralize-vote Comment",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/comments/{{commentId}}/neutral-vote",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "threads",
+                    "{{threadId}}",
+                    "comments",
+                    "{{commentId}}",
+                    "neutral-vote"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Neutralize-vote Comment",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/threads/{{threadId}}/comments/{{commentId}}/neutral-vote",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "threads",
+                        "{{threadId}}",
+                        "comments",
+                        "{{commentId}}",
+                        "neutral-vote"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 201
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:25:59 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"140-Efq1msvn9JDi8w7qIeM+Y1MkiyA\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::8bg7j-1782872759341-5fbc89665499"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "320"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Comment vote neutralized\",\n    \"data\": {\n        \"vote\": {\n            \"id\": \"156656b6-ce95-496a-8a3c-4ff4b59f5389\",\n            \"voteType\": 0,\n            \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n            \"commentId\": \"2bb0fbf7-6175-4573-9cef-ff19b217c195\",\n            \"createdAt\": \"2026-07-01T02:25:39.678Z\",\n            \"updatedAt\": \"2026-07-01T02:25:59.478Z\"\n        }\n    }\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Leaderboards",
+          "item": [
+            {
+              "name": "See Leaderboards",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/v1/leaderboards",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "leaderboards"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "See Leaderboards",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{BASE_URL}}/v1/leaderboards",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "leaderboards"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": 200
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "age",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "public, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "br"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 01 Jul 2026 02:23:56 GMT"
+                    },
+                    {
+                      "key": "etag",
+                      "value": "W/\"131e-5YiBZWQJrymMULtZsVfHtpCrToM\""
+                    },
+                    {
+                      "key": "server",
+                      "value": "Vercel"
+                    },
+                    {
+                      "key": "strict-transport-security",
+                      "value": "max-age=63072000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "x-powered-by",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "x-vercel-cache",
+                      "value": "MISS"
+                    },
+                    {
+                      "key": "x-vercel-id",
+                      "value": "sin1::iad1::2h5tn-1782872635484-f59c18bbb8ff"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"data\": {\n        \"leaderboards\": [\n            {\n                \"id\": \"6e8a8c32-bbcf-45af-927e-f7850ae729a1\",\n                \"score\": 3,\n                \"userId\": \"492df421-d9d9-415b-a66a-dc5a4005fd3d\",\n                \"user\": {\n                    \"id\": \"492df421-d9d9-415b-a66a-dc5a4005fd3d\",\n                    \"name\": \"Afif Rohul\",\n                    \"email\": \"afifmemyself22@gmail.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Afif%20Rohul&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.188Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.188Z\"\n                }\n            },\n            {\n                \"id\": \"7806f4a0-3a52-4b76-86cb-9e8fc319b8ad\",\n                \"score\": 2,\n                \"userId\": \"1aaa76e9-84f5-4936-9ebd-e2b43fd5d51b\",\n                \"user\": {\n                    \"id\": \"1aaa76e9-84f5-4936-9ebd-e2b43fd5d51b\",\n                    \"name\": \"John Doe\",\n                    \"email\": \"johndoe@gmail.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=John Doe&background=random\",\n                    \"createdAt\": \"2026-06-30T03:51:28.920Z\",\n                    \"updatedAt\": \"2026-06-30T03:51:28.920Z\"\n                }\n            },\n            {\n                \"id\": \"763b1ef7-2f06-4139-b58b-b2befb038c9b\",\n                \"score\": 0,\n                \"userId\": \"8a4a8802-ea6c-458a-82f1-71aafd8f653e\",\n                \"user\": {\n                    \"id\": \"8a4a8802-ea6c-458a-82f1-71aafd8f653e\",\n                    \"name\": \"Yolanda Indah\",\n                    \"email\": \"Zelda27@yahoo.co.id\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Yolanda%20Indah&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.200Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.200Z\"\n                }\n            },\n            {\n                \"id\": \"8ef1630b-e45b-4c06-9b95-a37cf8ff43c5\",\n                \"score\": 0,\n                \"userId\": \"095b9a61-094e-414d-8c14-0e2bdfbd134a\",\n                \"user\": {\n                    \"id\": \"095b9a61-094e-414d-8c14-0e2bdfbd134a\",\n                    \"name\": \"Ajimat Ajimat Herlambang\",\n                    \"email\": \"Cahyanto91@gmail.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Ajimat%20Ajimat%20Herlambang&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.212Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.212Z\"\n                }\n            },\n            {\n                \"id\": \"a9697e99-dbfe-4795-900e-e47b7c889361\",\n                \"score\": 0,\n                \"userId\": \"0088ad72-1d08-4dd8-a6fa-1df190cf2bcf\",\n                \"user\": {\n                    \"id\": \"0088ad72-1d08-4dd8-a6fa-1df190cf2bcf\",\n                    \"name\": \"Eka Saragih\",\n                    \"email\": \"Titi.Saptono@gmail.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Eka%20Saragih&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.202Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.202Z\"\n                }\n            },\n            {\n                \"id\": \"ac50a7e8-1495-4821-8265-04d1d747c342\",\n                \"score\": 0,\n                \"userId\": \"af0a5e99-1c59-425e-aabb-1f42fa6c8e10\",\n                \"user\": {\n                    \"id\": \"af0a5e99-1c59-425e-aabb-1f42fa6c8e10\",\n                    \"name\": \"Hamima Hamima Damayanti\",\n                    \"email\": \"Anom30@yahoo.co.id\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Hamima%20Hamima%20Damayanti&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.210Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.210Z\"\n                }\n            },\n            {\n                \"id\": \"bf920a75-e14b-4ae9-b16e-2c594a029d8b\",\n                \"score\": 0,\n                \"userId\": \"4461eef4-39a4-4b8c-b214-e32ead796195\",\n                \"user\": {\n                    \"id\": \"4461eef4-39a4-4b8c-b214-e32ead796195\",\n                    \"name\": \"Hariyah Raisa\",\n                    \"email\": \"Queen.Safitri59@gmail.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Hariyah%20Raisa&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.213Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.213Z\"\n                }\n            },\n            {\n                \"id\": \"cdd34465-e308-4cce-991d-5d80f339f568\",\n                \"score\": 0,\n                \"userId\": \"b6f28e5a-4950-4157-b716-e4fc84fc4e17\",\n                \"user\": {\n                    \"id\": \"b6f28e5a-4950-4157-b716-e4fc84fc4e17\",\n                    \"name\": \"Mangunsong Ajimat\",\n                    \"email\": \"Rafi.Darojat@yahoo.co.id\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Mangunsong%20Ajimat&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.209Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.209Z\"\n                }\n            },\n            {\n                \"id\": \"cf911ca5-037d-4e49-a210-56de780816ef\",\n                \"score\": 0,\n                \"userId\": \"af96e20d-e041-45e2-b15f-d39eec5aef85\",\n                \"user\": {\n                    \"id\": \"af96e20d-e041-45e2-b15f-d39eec5aef85\",\n                    \"name\": \"Nuraini Tri\",\n                    \"email\": \"Harsanto_Uwais@gmail.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Nuraini%20Tri&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.205Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.205Z\"\n                }\n            },\n            {\n                \"id\": \"d4803ddd-160c-4ed6-9839-c3dc91ad3547\",\n                \"score\": 0,\n                \"userId\": \"132c9942-f41c-4c23-82ed-fba5ba95b38e\",\n                \"user\": {\n                    \"id\": \"132c9942-f41c-4c23-82ed-fba5ba95b38e\",\n                    \"name\": \"Sadina Pudjiastuti\",\n                    \"email\": \"Jarwa50@yahoo.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Sadina%20Pudjiastuti&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.207Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.207Z\"\n                }\n            },\n            {\n                \"id\": \"3948f14e-00ae-4569-a8aa-0cbb53eca5ca\",\n                \"score\": 0,\n                \"userId\": \"512945c2-a63f-4bda-bb0e-035af2aa1ee5\",\n                \"user\": {\n                    \"id\": \"512945c2-a63f-4bda-bb0e-035af2aa1ee5\",\n                    \"name\": \"Kusuma Nadia\",\n                    \"email\": \"Balamantri20@yahoo.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Kusuma%20Nadia&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.198Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.198Z\"\n                }\n            },\n            {\n                \"id\": \"c041144f-cd9b-40ee-81bb-e415b2bad28a\",\n                \"score\": 0,\n                \"userId\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n                \"user\": {\n                    \"id\": \"6bb4eab5-988d-4f4c-966b-b535f7acd0cd\",\n                    \"name\": \"Afif Rohul 2\",\n                    \"email\": \"afifrohul@gmail.com\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Afif Rohul 2&background=random\",\n                    \"createdAt\": \"2026-07-01T02:22:15.959Z\",\n                    \"updatedAt\": \"2026-07-01T02:22:15.959Z\"\n                }\n            },\n            {\n                \"id\": \"3f2dc8df-03ef-421f-8324-82737ebbdbeb\",\n                \"score\": 0,\n                \"userId\": \"9b1e80bb-0f58-4792-b856-8b0cad27fb70\",\n                \"user\": {\n                    \"id\": \"9b1e80bb-0f58-4792-b856-8b0cad27fb70\",\n                    \"name\": \"Nugraha Jindra\",\n                    \"email\": \"Kusuma.Purwadi@yahoo.co.id\",\n                    \"avatar\": \"https://ui-avatars.com/api/?name=Nugraha%20Jindra&background=random\",\n                    \"createdAt\": \"2026-06-29T06:37:01.211Z\",\n                    \"updatedAt\": \"2026-06-29T06:37:01.211Z\"\n                }\n            }\n        ]\n    }\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

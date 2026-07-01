@@ -15,7 +15,7 @@ const router = Router();
 
 router.get("/", (req, res) => {
   return res.json({
-    docs: `${req.protocol}://${req.get("host")}`,
+    repository: `https://github.com/afifrohul/forum-api-prisma`,
     baseUrl: {
       v1: `${req.protocol}://${req.get("host")}/v1`,
     },
